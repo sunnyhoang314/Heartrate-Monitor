@@ -1,11 +1,12 @@
 import customtkinter as ctk
-from PIL import Image, ImageTk
+from PIL import Image
 import tkinter as tk
 from HeartRateAnalysisGUI import *
 from DataVisualizationGUI import *
 from DataLoggingGUI import *
 from AlertSystemGUI import *
 from DataVisualizationGUI import *
+from RealTimeDataReadingGUI import *
 
 
 # System settings
@@ -27,7 +28,7 @@ title.place(relx=0.5, rely=0.1, anchor=tk.CENTER)
 
 # Adding buttons for session type
 rtdrImage = ctk.CTkImage(Image.open("pictures/big-data-7216839_1280.png"), size=(100, 100))
-rtdrButton = ctk.CTkButton(app, text="Real-Time Data Reading", image=rtdrImage)
+rtdrButton = ctk.CTkButton(app, text="Real-Time Data Reading", image=rtdrImage, command=runRTDR)
 rtdrButton.place(relx=0.05, rely=0.2, anchor=tk.NW)
 
 dvImage = ctk.CTkImage(Image.open("pictures/dual-access-chart.png"), size=(100, 100))
