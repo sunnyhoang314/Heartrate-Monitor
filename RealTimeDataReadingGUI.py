@@ -7,6 +7,23 @@ import tkinter as tk
 # Start the heart rate monitor script as a subprocess
 subprocess.Popen(["python", 'HeartRateMonitor.py'])
 
+# Function to continuously update the heart rate from the file
+def updateRTDR():
+    global heart_rate
+    while True:
+        try:
+            with open('pictures/hr.txt', 'r') as file:
+                heart_rate = file.readline().strip
+        except:
+            heart_rate = 'N/A'
+        time.sleep(1)
+        
+# Thread for updating heart rate
+heart_rate = '0'
+heart_rate_thread = threading.Thread(target=updateRTDR)
+heart_rate_thread.daemon = True
+heart_rate_thread.start()
+
 def runRTDR():
     # System settings
     ctk.set_appearance_mode("Dark")
@@ -25,25 +42,22 @@ def runRTDR():
     title.place(relx=0.5, rely=0.1, anchor=tk.CENTER)
 
     # Start button
-    startButton = ctk.CTkButton(app, text="Start", command=updateRTDR)
+    startButton = ctk.CTkButton(app, text="Start", command=start_heart_rate(app))
     startButton.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
     # Run app
     app.mainloop()
 
-# Function to continuously update the heart rate from the file
-def updateRTDR():
-    global heart_rate
-    while True:
-        try:
-            with open('pictures/hr.txt', 'r') as file:
-                heart_rate = file.readline().strip
-        except:
-            heart_rate = 'N/A'
-        time.sleep(1)
 
-# Thread for updating heart rate
-heart_rate = '0'
-heart_rate_thread = threading.Thread(target=updateRTDR)
-heart_rate_thread.daemon = True
-heart_rate_thread.start()
+def start_heart_rate(app):
+    global heart_rate
+    # Display heart rate
+    heart_rate_text = ctk.CTkLabel(master=app,
+                                   text="Current heartrate: " + str(heart_rate) + " BPM",
+                                   width=120, 
+                                   height=25, 
+                                   corner_radius=8,)
+    heart_rate_text.place(relx=0.5, rely=0.1, anchor=tk.CENTER)
+
+
+
