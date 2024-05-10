@@ -13,7 +13,7 @@ def updateRTDR():
     while True:
         try:
             with open('pictures/hr.txt', 'r') as file:
-                heart_rate = file.readline().strip
+                heart_rate = file.readline().strip()
         except:
             heart_rate = 'N/A'
         time.sleep(1)
