@@ -42,7 +42,7 @@ def runRTDR():
     title.place(relx=0.5, rely=0.1, anchor=tk.CENTER)
 
     # Start button
-    startButton = ctk.CTkButton(app, text="Start", command=start_heart_rate(app))
+    startButton = ctk.CTkButton(app, text="Start", command=lambda: start_heart_rate(app))
     startButton.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
     # Run app
@@ -57,7 +57,13 @@ def start_heart_rate(app):
                                    width=120, 
                                    height=25, 
                                    corner_radius=8,)
-    heart_rate_text.place(relx=0.5, rely=0.1, anchor=tk.CENTER)
+    heart_rate_text.place(relx=0.5, rely=0.3, anchor=tk.CENTER)
+
+    def update_label():
+        heart_rate_text.configure(text="Current heartrate: " + str(heart_rate) + " BPM")
+        # update the label every 1000ms (1 second)
+        app.after(1000, update_label)
 
 
+    update_label()
 
