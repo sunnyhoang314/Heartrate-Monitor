@@ -1,1 +1,1 @@
-This app is created from the Python library CustomTkinter and Tkinter that reads heart beat data from a Samsung Galaxy Watch. It can do live-time reading, data visualization, heart rate analysis, alert system, and data logging.
+This app is created from the Python library CustomTkinter and Tkinter that reads heart beat data from a Samsung Galaxy Watch. It can do live-time reading, data visualization, heart rate analysis, alert system, and data logging. This project is currently in development that will be implemented on and off due to school.
