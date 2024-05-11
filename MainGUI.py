@@ -32,7 +32,7 @@ rtdrButton = ctk.CTkButton(app, text="Real-Time Data Reading", image=rtdrImage, 
 rtdrButton.place(relx=0.05, rely=0.2, anchor=tk.NW)
 
 dvImage = ctk.CTkImage(Image.open("pictures/dual-access-chart.png"), size=(100, 100))
-dvButton = ctk.CTkButton(app, text="Data Visualization", image=dvImage)
+dvButton = ctk.CTkButton(app, text="Data Visualization", image=dvImage, command=runDV)
 dvButton.place(relx=0.76, rely=0.2, anchor=tk.N)
 
 hraImage = ctk.CTkImage(Image.open("pictures/health-insights-heart-rate.png"), size=(130, 100))
