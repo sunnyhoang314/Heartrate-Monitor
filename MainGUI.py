@@ -36,7 +36,7 @@ dvButton = ctk.CTkButton(app, text="Data Visualization", image=dvImage, command=
 dvButton.place(relx=0.76, rely=0.2, anchor=tk.N)
 
 hraImage = ctk.CTkImage(Image.open("pictures/health-insights-heart-rate.png"), size=(130, 100))
-hraButton = ctk.CTkButton(app, text="Heart Rate Analysis", image=hraImage)
+hraButton = ctk.CTkButton(app, text="Heart Rate Analysis", image=hraImage, command=runHRA)
 hraButton.place(relx=0.05, rely=0.6, anchor=tk.W)
 
 asImage = ctk.CTkImage(Image.open("pictures/1200px-OOjs_UI_icon_alert_destructive.svg.png"), size=(100, 100))
