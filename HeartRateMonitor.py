@@ -1,4 +1,4 @@
-# This program was orginally developed by loic2665 on Github
+# This program was originally developed by loic2665 on Github
 
 from sys import argv
 from http.server import BaseHTTPRequestHandler, HTTPServer
