@@ -43,10 +43,6 @@ asImage = ctk.CTkImage(Image.open("pictures/1200px-OOjs_UI_icon_alert_destructiv
 asButton = ctk.CTkButton(app, text="Alert System", image=asImage, command=runAS)
 asButton.place(relx=0.9, rely=0.6, anchor=tk.E)
 
-dlImage = ctk.CTkImage(Image.open("pictures/3155997.png"), size=(100, 100))
-dlButton = ctk.CTkButton(app, text="Data Logging", image=dlImage)
-dlButton.place(relx=0.5, rely=0.97, anchor=tk.S)
-
 # Run app
 app.mainloop()
 
