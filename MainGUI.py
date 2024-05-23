@@ -3,7 +3,6 @@ from PIL import Image
 import tkinter as tk
 from HeartRateAnalysisGUI import *
 from DataVisualizationGUI import *
-from DataLoggingGUI import *
 from AlertSystemGUI import *
 from DataVisualizationGUI import *
 from RealTimeDataReadingGUI import *
