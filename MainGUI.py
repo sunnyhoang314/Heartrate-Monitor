@@ -38,9 +38,9 @@ hraImage = ctk.CTkImage(Image.open("pictures/health-insights-heart-rate.png"), s
 hraButton = ctk.CTkButton(app, text="Heart Rate Analysis", image=hraImage, command=runHRA)
 hraButton.place(relx=0.05, rely=0.6, anchor=tk.W)
 
-asImage = ctk.CTkImage(Image.open("pictures/1200px-OOjs_UI_icon_alert_destructive.svg.png"), size=(100, 100))
+asImage = ctk.CTkImage(Image.open("pictures/1200px-OOjs_UI_icon_alert_destructive.svg.png"), size=(130, 100))
 asButton = ctk.CTkButton(app, text="Alert System", image=asImage, command=runAS)
-asButton.place(relx=0.9, rely=0.6, anchor=tk.E)
+asButton.place(relx=0.95, rely=0.6, anchor=tk.E)
 
 # Run app
 app.mainloop()
