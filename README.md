@@ -3,6 +3,6 @@ This app is created from the Python GUI library CustomTkinter and Tkinter that r
 # How to use
 1. Download the HeartRateToWeb app from the Galaxy Store on your watch.
 2. Launch main.py to determine your IP address and port.
-3. Input the IP address and port in the format "http://ip.ad.re.ss.:port
+3. Input the IP address and port in the format "http://ip.ad.re.ss.:port"
 4. Wear the watch and wait until the the BPM changes from 0 to your recorded heart rate.
 5. You are now ready to use the app.
