@@ -1,4 +1,4 @@
-# This program was originally developed by loic2665 on Github
+# This library was originally developed by loic2665 on Github with modification by Luftwaffles
 
 from sys import argv
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -28,6 +28,7 @@ def get_ip():
     return IP
 
 class HeartBeatHandler(BaseHTTPRequestHandler):
+    connection_successful_printed = False
     def _set_response(self, code):
         self.send_response(code)
         self.send_header('Access-Control-Allow-Origin', '*')
@@ -50,14 +51,18 @@ class HeartBeatHandler(BaseHTTPRequestHandler):
 
 
     def do_POST(self):
+        if not self.connection_successful_printed:
+            print("Connection Successful!")
+            HeartBeatHandler.connection_successful_printed = True
+
         content_length = int(self.headers['Content-Length'])  # <--- Gets the size of data
         post_data = self.rfile.read(content_length)  # <--- Gets the data itself
         # print("{}\n".format(post_data.decode('utf-8')))
 
-        self._set_response(200)
-        self.wfile.write("OK".encode('utf-8'))
+        # self._set_response(200)
+        # self.wfile.write("OK".encode('utf-8'))
         data = post_data.decode('utf-8').split("=")
-        print("Received BPM = {}".format(data[1]))
+        # print("Received BPM = {}".format(data[1]))
         write_hr(data[1])
 
 
